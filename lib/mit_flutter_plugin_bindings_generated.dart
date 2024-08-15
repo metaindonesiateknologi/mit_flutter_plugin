@@ -1,7 +1,6 @@
 import 'dart:ffi';
 import 'package:ffi/ffi.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:geolocator/geolocator.dart';
 
 class MitFlutterPluginBindings {
   final Pointer<T> Function<T extends NativeType>(String symbolName) _lookup;
@@ -35,12 +34,6 @@ class MitFlutterPluginBindings {
 
     String lat = "";
     String lon = "";
-    try {
-      Position locationData = await Geolocator.getCurrentPosition()
-          .timeout(const Duration(seconds: 2));
-      lat = locationData.latitude.toString();
-      lon = locationData.longitude.toString();
-    } catch (e) {}
 
     var p1 = search.toNativeUtf8();
     var p2 = lat.toNativeUtf8();
