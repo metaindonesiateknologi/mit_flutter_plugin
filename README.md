@@ -27,6 +27,8 @@ For iOS, navigate to the `ios` directory of your Flutter project and run:
 pod install
 ```
 
+This ensures that all the necessary dependencies for iOS are properly installed.
+
 ## Usage
 
 
@@ -75,5 +77,3 @@ Future<String> getAddressByLatLon(lat, lon) async {
   return '';
 }
 ```
-
-This ensures that all the necessary dependencies for iOS are properly installed.
