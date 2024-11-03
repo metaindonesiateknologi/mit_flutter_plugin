@@ -37,7 +37,7 @@ Future<List<Place>> getPlace(String text) async {
   List<Place> listPlace = [];
   try {
       var r = await mit_flutter_plugin
-          .searchAddressByName(text, geoToken)
+          .searchAddressByName(text, "your-registered-token")
           .timeout(const Duration(seconds: 5));
       var r3 = jsonDecode(r);
       for (var i = 0; i < r3.length; i++) {
@@ -65,7 +65,7 @@ Future<List<Place>> getPlace(String text) async {
 Future<String> getAddressByLatLon(lat, lon) async {
   try {
     var r = await mit_flutter_plugin
-        .searchAddressByCoord(lat.toString(), lon.toString(), geoToken)
+        .searchAddressByCoord(lat.toString(), lon.toString(), "your-registered-token")
         .timeout(const Duration(seconds: 5));
 
     return r;
